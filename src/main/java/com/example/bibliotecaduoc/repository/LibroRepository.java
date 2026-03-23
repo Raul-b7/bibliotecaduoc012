@@ -90,7 +90,7 @@ public class LibroRepository {
         for (int i = 0; i < listaLibros.size(); i++ ){
 
             if (libro != null) {
-                id idPosicion = i;
+                idPosicion = i;
                 break;
             }
         } 
@@ -102,7 +102,7 @@ public class LibroRepository {
 
         // Otra Alternativa 
 
-        listaLibros
+        listaLibros.removeIf(x -> x.getId() == id);
             
     } 
 
