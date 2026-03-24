@@ -19,7 +19,7 @@ import com.example.bibliotecaduoc.services.LibroService;
 @Service
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/libros")
 public class LibroControler {
 
     @Autowired
@@ -41,7 +41,7 @@ public class LibroControler {
         return libroService.getLibroid(id);
     }
 
-    @PutMapping
+    @PutMapping("{id}")
     public Libro actualizaLibro(@PathVariable int id, @RequestBody Libro Libro){
         // el id lo usaremos mas adelante
         return libroService.updateLibro(Libro);
