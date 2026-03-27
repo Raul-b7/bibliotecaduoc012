@@ -45,4 +45,49 @@ public class LibroService {
         return libroRepository.totalLibros();
     }
 
+    //Buscar por ISBN
+
+    public Libro buscarPorIsbn(String isbn){
+        List<Libro> libros = libroRepository.obtenerLibros();
+
+            for (Libro l : libros) {
+                if (l.getIsbn().equals(isbn)) {
+                    return l;
+                }
+            }
+            return null;
+    }    
+
+     //antidad por año
+
+    public int buscarPorFechaPublicacion(int fechaPublicacio){
+        List<Libro> libros = libroRepository.obtenerLibros();
+        int contador = 0;
+
+        for (Libro l : libros) {
+            if (l.getFechaPublicacion() == fechaPublicacio){
+                contador++;
+            }
+        }
+         return contador;
+    }
+
+    // Buscar por autor
+
+    public List<Libro> buscarPorAutor(String autor){
+        List<Libro> libros = libroRepository.obtenerLibros();
+        List<Libro> resultado = new java.util.ArrayList<>();
+
+        for (Libro l : libros) {
+            if (l.getAutor().equalsIgnoreCase(autor)) {
+                resultado.add(l);
+            }
+        }
+
+        return resultado;
 }
+
+     
+}
+
+
