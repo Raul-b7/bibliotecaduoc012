@@ -47,7 +47,7 @@ public class LibroService {
 
     //Buscar por ISBN
 
-    public Libro buscarPorIsbn(String isbn){
+    public Libro buscarPorIsbn(String isbn){ // Libro viene de la clase libro que esta en model //
         List<Libro> libros = libroRepository.obtenerLibros();
 
             for (Libro l : libros) {
